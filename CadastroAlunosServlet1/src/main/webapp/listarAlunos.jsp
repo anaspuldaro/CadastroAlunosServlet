@@ -8,14 +8,14 @@
 <title>Lista de Alunos</title>
 </head>
 <body>
-
 <% String usuario = (String) session.getAttribute("usuario");
 	out.print("Bem vindo, "+usuario+"<br>");
 %>
 
 Clique <a href="cadastrarAluno.jsp">aqui</a> para cadastrar um novo aluno
 
-<%List<Aluno> listaAlunos = (List<Aluno>) session.getAttribute("listaAlunos");  %>
+<!--  mudar para request-->
+<%List<Aluno> listaAlunos = (List<Aluno>) request.getAttribute("listaAlunos");  %>
 
 <% if (listaAlunos == null) { %>
 		<h3>Nenhum aluno cadastrado</h3>
@@ -34,6 +34,7 @@ Clique <a href="cadastrarAluno.jsp">aqui</a> para cadastrar um novo aluno
 			<% for (Aluno aluno : listaAlunos) { %>
 			<tr>
 				<td><a href="DetalharServlet?nome=<%=aluno.getId()%>">Detalhar</a></td>
+				<td><%=aluno.getMatricula()%> </td>
 				<td><%=aluno.getNome()%> </td>
 				<td><%=aluno.getIdade()%> </td>
 				<td><%=aluno.getGenero()%> </td>
@@ -44,6 +45,6 @@ Clique <a href="cadastrarAluno.jsp">aqui</a> para cadastrar um novo aluno
 		</table>
 <% } %>
 
-<a href = "lougout">Lougout</a>
+<a href = "LogoutServlet">Lougout</a>
 </body>
 </html>

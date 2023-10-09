@@ -25,7 +25,7 @@
 <%=request.getAttribute("mensagem") == null ? "" : request.getAttribute("mensagem")%>
 
 <session-config>
- <session-timeout>5</session-timeout>
+ <session-timeout></session-timeout>
 </session-config>
 
 </body>

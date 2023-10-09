@@ -21,8 +21,7 @@ public class ConfirmarCadastroServlet extends HttpServlet {
    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Recuperando a sessão
-		HttpSession session = request.getSession();
+		
 		
 		// Recuperando os valores informados
 		String id = request.getParameter("id");
@@ -31,23 +30,15 @@ public class ConfirmarCadastroServlet extends HttpServlet {
 		String genero = request.getParameter("genero");
 		String semestre = request.getParameter("semestre");
 		
-		// Recuperando a lista da sessão, caso não exista, cria
-		List<Aluno> listaAlunos = (List<Aluno>) session.getAttribute("listaAlunos");
-		if (listaAlunos == null) {
-			listaAlunos = new ArrayList<>(); // Criando a lista
-		}
+
 
 		// Guardar no objeto aluno
 		Aluno aluno = new Aluno();
-		
-		// Adicionando aluno na lista (INSERT)
-		listaAlunos.add(aluno);
-		
-		session.setAttribute("listaAlunos", listaAlunos);
-		request.setAttribute("id", id);
+
 		
 		// Encaminhar a requisição para o JSP
 		request.getRequestDispatcher("detalharAluno.jsp").forward(request, response);
+	}
 		
 		
 		private static final String Semestre = null;
@@ -62,20 +53,13 @@ public class ConfirmarCadastroServlet extends HttpServlet {
 			return matricula;
 		}
 			private static String gerarNumerosAleatorios() {
-				Random randon =new Random;
+				Random randon = new Random();
 				StringBuilder numerosAleatorios = new StringBuilder();
 				
 				for(int i = 0; 1 < 4; i++) {
-					Random random;
-					numerosAleatorios .append(random.nextInt(10));
+					Random random = null;
+					numerosAleatorios.append(random.nextInt(10));
 				}
-				return numerosAleatorios.toString();
-				
-				int anoNascimento;
-				int mesNacsimento;
-				int idade;
-				String matricula = gerarMatricula(anoNascimento, mesNacsimento, Semestre, idade);
-				System.out.println ("Matricula gerada" + matricula);
 		
 	}
 

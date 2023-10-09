@@ -19,18 +19,25 @@ public class Aluno {
 		this.idade = idade;
 		this.semestre = semestre;
 		this.genero = genero;
+		
+	}
+	
+	
+	public Aluno(int id,String nome, String idade, String semestre, String genero, String matricula) {
+		this.id = id;
+		this.nome = nome;
+		this.idade = idade;
+		this.semestre = semestre;
+		this.genero = genero;
 		this.matricula = matricula;
+		
 	}
-	public String getMatricula(){
-		return matricula;
-	}
-	public void setMatricula() {
-		this.matricula = matricula;
-	}
+
 	public int getId() {
 		return id;
 	}
-	public void setId() {
+
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -65,9 +72,14 @@ public class Aluno {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	
-	
-	
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
 	
 
 }

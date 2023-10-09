@@ -79,4 +79,14 @@
     <servlet-name>logoutServlet</servlet-name>
     <url-pattern>/logoutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>listarServlet</display-name>
+    <servlet-name>listarServlet</servlet-name>
+    <servlet-class>com.jp.senac.controller.listarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>listarServlet</servlet-name>
+    <url-pattern>/listarServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
